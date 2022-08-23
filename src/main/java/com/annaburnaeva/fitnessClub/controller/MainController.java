@@ -7,37 +7,45 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 
-	@GetMapping("/")
-	public String root() {
-		return "index";
-	}
+    @GetMapping("/")
+    public String root() {
+        return "index";
+    }
 
+    @GetMapping("/index")
+    public String homepage() {
 
-	@GetMapping("/index")
-	public String homepage() {
-		return "index";
-	}
+        return "index";
+    }
 
-	@GetMapping("/login")
-	public String login(Model model) {
-		return "login";
-	}
+    @GetMapping("/login")
+    public String login(Model model) {
+        return "login";
+    }
 
-	@GetMapping("/pilates")
-	public String pilates() {
+    @GetMapping("/pilates")
+    public String pilates() {
 
-		return "pilates";
-	}
+        return "pilates";
+    }
 
-	@GetMapping("/user")
-	public String userIndex() {
-		return "user/index";
-	}
+    @GetMapping("/dance")
+    public String dance() {
 
-	@GetMapping("/fitness_class_members")
-	public String fitnessClassMembers() {
-		return "fitness_class_members";
-	}
+        return "dance";
+    }
+
+    @GetMapping("/fitball")
+    public String fitball() {
+
+        return "fitball";
+    }
+
+    @GetMapping("/fitness_class_members")
+    public String fitnessClassMembers() {
+
+        return "fitness_class_members";
+    }
 
 
 }

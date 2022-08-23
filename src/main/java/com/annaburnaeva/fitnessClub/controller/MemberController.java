@@ -85,7 +85,7 @@ public class MemberController {
             model.addAttribute("fitnessClass", fitnessClass);
             memberService.saveMember(member);
             fitnessClassService.saveFitnessClass(fitnessClass);
-            return "redirect:/members";
+            return "redirect:/fitness_classes";
         } catch (MemberNotFoundException | FitnessClassNotFoundException e) {
             redirectAttributes.addFlashAttribute("message", "Member or Class not found");
             return "redirect:/members";

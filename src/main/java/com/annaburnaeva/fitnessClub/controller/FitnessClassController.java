@@ -84,24 +84,5 @@ public class FitnessClassController {
             return "redirect:/fitness_classes";
         }
     }
-//    @GetMapping("fitness_classes/add_to_member/{fitnessClassId}/{memberId}")
-//    public String addMemberToFitnessClass(@PathVariable(name = "fitnessClassId") Long fitnessClassId,
-//                                          @PathVariable(name = "memberId") Long memberId,
-//                                          Model model, RedirectAttributes redirectAttributes)
-//            throws FitnessClassNotFoundException, MemberNotFoundException {
-//        try {
-//            Member member = memberService.getMemberById(memberId);
-//            FitnessClass fitnessClass = fitnessClassService.getFitnessClassById(fitnessClassId);
-//            List<FitnessClass> currentFitnessClasses = member.getFitnessClasses();
-//            currentFitnessClasses.add(fitnessClass);
-//            model.addAttribute("member", member);
-//            return "redirect:/fitness_class_members";
-//        } catch (MemberNotFoundException | FitnessClassNotFoundException e) {
-//            redirectAttributes.addFlashAttribute("message", "Member or Class not found");
-//            return "redirect:/fitness_class_members";
-//
-//        }
-//
-//    }
 }
 
