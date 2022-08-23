@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link th:href="@{/stylesheets/members.css}" rel="stylesheet"/>
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>-->
+</head>
+<body>
+<div class="container-fluid text-center">
+</div>
+<!--<div th:switch="${member}">-->
+    <!--  <h2 th:case="null">No members yet!</h2>-->
+    <!--  <div th:case="*">-->
+    <h1> Member Account </h1>
+    <div th:if="${message}" class="alert alert-success text-center">
+        [[${message}]]
+    </div>
+    <div>
+        <table class="table table-bordered">
+<!--            <th:block th:each="memberAccount: ${memberAccounts}">-->
+<!--                <div class="row border rounded" th:with="fitnessClass =${memberAccount.fitnessClass}">-->
+            <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>email</th>
+                <th>Phone Number</th>
+                <th>Fitness Classes</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="member: ${member}">
+<!--                <div class="row border rounded" th:with="fitnessClasses =${fitnessClasses}">-->
+                <td th:text="${member.id}"></td>
+                <td th:text="${member.firstName}"></td>
+                <td th:text="${member.lastName}"></td>
+                <td th:text="${member.email}"></td>
+                <td th:text="${member.phoneNumber}"></td>
+                <td th:text="${member.FitnessClasses}"></td>
+<!--                <a class="h4 mr-3" th:href="@{'/members/fitness_class/' + ${member.id}}">Add Fitness Class</a>-->
+                <td>
+<!--                    <a class="h4 mr-3" th:href="@{'/member_account/add' +${member.id}+${fitnessClass.id}}">Add </a>-->
+<!--                    <a class="h4" th:href="@{'/member_account/delete' + ${member.fitnessClass.id}}">Delete</a>-->
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

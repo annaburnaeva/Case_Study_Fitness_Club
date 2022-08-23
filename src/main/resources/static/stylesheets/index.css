@@ -1,0 +1,225 @@
+:root {
+    --base-color: #171717;
+    --secondary-color: #901d86;
+    --action-color: #f9ecec;
+    --layover-color: #f3d2f26c;
+}
+
+body {
+    font-family: "MV Boli";
+    margin: 0;
+    height: 160vh;
+    background-color: black;
+}
+
+h2 {
+    text-align: center;
+    font-family: "MV Boli";
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr 2fr 1fr;
+    grid-template-areas:
+      "main main main header"
+      "main main main fitness"
+      "pilates dance  fitball fitness"
+      "footer footer footer footer";
+    height: 155vh;
+    gap: 0.5em;
+    margin: 1em;
+    color: white;
+    border-radius: 3px;
+}
+
+header {
+    grid-area: header;
+    width: 55vh;
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(251, 133, 157, 1) 100%);
+    background-blend-mode: screen;
+}
+
+main {
+    clear: both;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    grid-area: main;
+    background-color: var(--base-color);
+    /*background-image: url(../images/m);*/
+    background-blend-mode: lighten;
+    /*background-size: cover;*/
+    /*display: flex;*/
+    justify-content: flex-end;
+    align-items: baseline;
+    font-size: 40px;
+}
+
+#pilates {
+    grid-area: pilates;
+    background-color: var(--layover-color);
+    background-image: url(../images/pil2.jpg);
+    background-size: 400px 300px;
+    background-blend-mode: lighten;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+#pilates:hover {
+    grid-area: pilates;
+    background-color: var(--layover-color);
+    background-image: url(../images/stretching.jpg);
+    background-blend-mode: lighten;
+    color: var(--action-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+#dance {
+    grid-area: dance;
+    background-color: var(--layover-color);
+    background-image: url(../images/dance1.jpg);
+    background-size: 400px 300px;
+    background-blend-mode: lighten;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+#dance:hover {
+    grid-area: dance;
+    background-color: var(--layover-color);
+    background-image: url(../images/gradient-pink-blue.webp);
+    background-blend-mode: lighten;
+    color: var(--action-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+#fitball {
+    grid-area: fitball;
+    background-color: var(--layover-color);
+    background-image: url(../images/fit3.webp);
+    background-blend-mode: lighten;
+    background-size: 400px 300px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+#fitball:hover {
+    grid-area: fitball;
+    background-color: var(--layover-color);
+    background-image: url(../images/exercise-hands-fit-ball.webp);
+    background-blend-mode: lighten;
+    color: var(--action-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #901d86;
+}
+
+video {
+    clear: both;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.video-wrapper {
+    clear: both;
+    /*border: 2px solid #000;*/
+    width: 1065px;
+    height: 660px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: baseline;
+    justify-content: start;
+}
+
+h1 {
+    clear: both;
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.fitness {
+    grid-area: fitness;
+    background-color: var(--action-color);
+    background-image: url(../images/small.webp);
+    background-blend-mode: darken;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.fitness:hover {
+    grid-area: fitness;
+    background-color: var(--action-color);
+    background-blend-mode: darken;
+    background-image: url(../images/neon-light.webp);
+    background-size: cover;
+    color: var(--action-color);
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    font-size: 50px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+a:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.social {
+    float: left;
+    width: 20%;
+    padding: 2%;
+}
+
+@media only screen and (max-width: 550px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 2.2fr 2.2fr 1.2fr 1.2fr 1.2fr;
+        grid-template-areas:
+        "header"
+        "main"
+        "pilates"
+        "dance"
+        "fitball"
+        "fitness"
+        "footer";
+    }
+}

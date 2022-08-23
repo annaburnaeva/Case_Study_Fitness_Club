@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--<html lang="en">-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <!--<meta charset="UTF-8" />-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Fitness Club</title>
+    <link
+            rel="stylesheets"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link th:href="@{/stylesheets/index.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="grid-container">
+    <header>
+        <h2><a href="login">Login</a></h2>
+        <h2><a href="registration">Register</a></h2>
+        <h2><a href="fitness_classes">Manage Fitness Classes</a></h2>
+        <h2><a href="members">Manage members</a></h2>
+<!--        <h2><a href="user_account">Your Account</a></h2>-->
+    </header>
+    <!--  <main><img src="../images/FC_purple.png"></main>-->
+    <main>
+        <div class="video-wrapper">
+            <video autoplay muted loop id="myVideo">
+                <source src="../images/marketing.mp4" type="video/mp4">
+            </video>
+            <h1>Welcome to our FitnessClub</h1>
+        </div>
+    </main>
+    <section id="pilates"><a href="pilates">pilates</a></section>
+    <section id="dance">dance</section>
+    <section id="fitball">fitball</section>
+    <div class="fitness">Join us today!</div>
+    <footer style="align-items: flex-end; grid-area: footer; background-color: palevioletred;">
+        <div class="social">
+            <a href="https://www.facebook.com/fwdfitclub" target="_blank"><img src="../images/facebook-logo.png"></a>
+            <a href="https://twitter.com/fwdfitclub" target="_blank"><img src="../images/twitter-logo.png"></a><img
+                src="../images/gif.gif" style="width: 80px; margin-left: 30px">
+            <p><a href="mailto:forwardfitness@club.net">fitness@club.com</a></p>
+            <strong>Copyright 2022. All Rights Reserved.</strong>
+
+        </div>
+    </footer>
+</div>
+</body>
+</html>

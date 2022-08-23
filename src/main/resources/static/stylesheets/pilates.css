@@ -1,0 +1,149 @@
+:root {
+  --base-color: #171717;
+  --secondary-color: #ef92e8;
+  --action-color:#f09abb;
+  --layover-color: rgba(245, 195, 240, 0.42);
+}
+
+body {
+  font-family: "MV Boli";
+  margin: 0;
+  height: 160vh;
+  background-color: black;
+}
+h {
+  text-align: center;
+  font-family: "MV Boli";
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 3fr 2fr 1fr;
+  grid-template-areas:
+      /* "header header header" */
+          "main main main"
+      "about about prices "
+      "footer footer footer";
+  height: 155vh;
+  gap: 0.5em;
+  margin: 1em;
+  color: white;
+  border-radius: 3px;
+}
+
+main {
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  grid-area: main;
+  color: rgb(30, 29, 29);
+  background-color: var(--base-color);
+  background-image: url(../images/pilates_republic.jpg);
+  background-blend-mode: lighten;
+  background-size: cover;
+  display: flex;
+  justify-content:flex-end;
+  align-items:baseline;
+  font-size: 140px;
+}
+
+#about {
+  grid-area: about;
+  background-color: var(--layover-color);
+  background-image: url(../images/fon.jpg);
+  background-size: cover;
+
+  /* background-size: 400px 300px; */
+  background-blend-mode: lighten;
+  color: rgb(221, 195, 246);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+}
+
+#about:hover {
+  grid-area: about;
+  background-color: var(--layover-color);
+  background-image: url(../images/AboutPilates.jpg);
+  background-size: cover;
+  background-blend-mode: lighten;
+  color: var(--action-color);
+  display: flex;
+  justify-content: baseline;
+  align-items:flex-start;
+  font-size: 40px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+#prices {
+  grid-area: prices;
+  background-color: var(--layover-color);
+  background-image: url(../images/fon.jpg);
+  background-size: cover;
+
+  /* background-size: 400px 300px; */
+  background-blend-mode: lighten;
+  color: rgb(66, 64, 64);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+}
+
+#prices:hover {
+  grid-area: prices;
+  background-color: var(--layover-color);
+  background-image: url(../images/Prices.jpg);
+  background-size: 120%;
+  background-blend-mode: lighten;
+  color: var(--action-color);
+  display: flex;
+  justify-content: baseline;
+  align-items:flex-start;
+  font-size: 40px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  margin-top: 200px;
+  height: 15px;
+  width: 15px;
+  color: #901d86;
+}
+a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.social {
+  float: left;
+  width: 20%;
+  padding: 2%;
+}
+#footer{
+  grid-area: footer;
+  /*display: flex;*/
+  /*justify-content:flex-end;*/
+  /*align-items:baseline;*/
+  background-color: rgb(220, 146, 171);
+  background-image: url(../images/FC_purple.png);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  font-size: 12px
+}
+
+@media only screen and (max-width: 1000px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 2.2fr 2.2fr 1.2fr 1.2fr 0.5fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "about"
+        "prices"
+        "footer";
+  }
+}

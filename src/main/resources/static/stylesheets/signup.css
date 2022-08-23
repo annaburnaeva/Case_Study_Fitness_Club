@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../images/fon_login.jpg);
+    background-size: cover;
+    font-family: "MV Boli";
+}
+button {
+    background-color:#9896f1;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+h2{
+    margin-top: -40px;
+}
+
+.row{
+    background-color: white;
+    border-radius: 30px;
+}
+.container {
+    width:1160px;
+    border-radius: 30px;
+}
+
+.dropbtn {
+    background-color: #9896f1;
+    color: #8ef6e4;
+    padding: 10px;
+    font-size: 15px;
+    height: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color:#9896f1;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background-color:#9896f1;
+    border: none;
+    border-radius: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    background-color:d5def5;
+}
+
+.dropdown-content a {
+    color: #005792;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    /* border-radius: 5px; */
+    background-color:#d5def5;
+}
+
+.dropdown a:hover {
+    border-radius: 5px;
+    background-color:#d5def5;
+}
+
+.show {
+    display: block;
+}
+
+
+
+
