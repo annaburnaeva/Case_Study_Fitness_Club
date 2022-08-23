@@ -20,42 +20,39 @@
     </div>
     <div>
         <div class="table">
-        <table id= "table" >
-            <thead class="thead-dark">
-            <tr>
-                <th>Id</th>
-                <th>Member Account</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>email</th>
-                <th>Phone Number</th>
-                <!--                <th>Fitness Classes</th>-->
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="member : ${members}">
-                <td th:text="${member.id}"></td>
-                <td><a class="h4 mr-3" th:href="@{'/member_account/' + ${member.id}}">Account</a></td>
-                <td th:text="${member.firstName}"></td>
-                <td th:text="${member.lastName}"></td>
-                <td th:text="${member.email}"></td>
-                <td th:text="${member.phoneNumber}"></td>
-                <!--                <td th:text="${member.fitnessClasses}"></td>-->
-                <td>
-                    <a class="h4 mr-3" th:href="@{'/members/edit/' + ${member.id}}">Edit</a>
-                    <a class="h4" th:href="@{'/members/delete/' + ${member.id}}">Delete</a>
-                </td>
-
-            </tr>
-            </tbody>
-        </table>
+            <table id="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Member Account</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>email</th>
+                    <th>Phone Number</th>
+                    <!--                <th>Fitness Classes</th>-->
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="member : ${members}">
+                    <td th:text="${member.id}"></td>
+                    <td><a class="h4 mr-3" th:href="@{'/member_account/' + ${member.id}}">Account</a></td>
+                    <td th:text="${member.firstName}"></td>
+                    <td th:text="${member.lastName}"></td>
+                    <td th:text="${member.email}"></td>
+                    <td th:text="${member.phoneNumber}"></td>
+                    <!--                <td th:text="${member.fitnessClasses}"></td>-->
+                    <td>
+                        <a class="h4 mr-3" th:href="@{'/members/edit/' + ${member.id}}">Edit</a>
+                        <a class="h4" th:href="@{'/members/delete/' + ${member.id}}">Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
-
 <div><h2><a th:href="member_form">Add new Member</a></h2></div>
-
 <div><h2><a href="index">Go to Homepage</a></h2></div>
 <script src="/js/members.js"></script>
 </body>

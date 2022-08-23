@@ -27,7 +27,7 @@ public class Member {
 
     private String phoneNumber;
 
-    @ManyToMany (mappedBy = "members")
+    @ManyToMany(mappedBy = "members")
     private List<FitnessClass> fitnessClasses;
 
     @Override
@@ -35,9 +35,4 @@ public class Member {
         return this.email;
     }
 
-
-//    @OneToOne(mappedBy = "member", fetch = FetchType.LAZY)
-//    private Cart cart;
-
-//    private Boolean isDeleted = Boolean.FALSE;
 }

@@ -6,9 +6,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface UserService extends UserDetailsService {
-	User findByEmail(String email);
+    User findByEmail(String email);
 
-	User save(UserRegistrationDto registration);
+    User save(UserRegistrationDto registration);
 
-	User getCurrentlyLoggedInUser(Authentication authentication);
+    User getCurrentlyLoggedInUser(Authentication authentication);
 }

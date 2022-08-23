@@ -23,57 +23,57 @@ import java.util.stream.Collectors;
 @Service
 public class UserServiceImpl implements UserService {
 
-	private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
-	@Autowired
-	private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 
-	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
-	public User findByEmail(String email) {
-		return userRepository.findByEmail(email);
-	}
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 
-	public User save(UserRegistrationDto registration) {
-		User user = new User();
-		user.setFirstName(registration.getFirstName());
-		user.setLastName(registration.getLastName());
-		user.setEmail(registration.getEmail());
-		user.setPassword(passwordEncoder.encode(registration.getPassword()));
-		user.setRoles(Arrays.asList(new Role("ROLE_USER")));
-		return userRepository.save(user);
-	}
+    public User save(UserRegistrationDto registration) {
+        User user = new User();
+        user.setFirstName(registration.getFirstName());
+        user.setLastName(registration.getLastName());
+        user.setEmail(registration.getEmail());
+        user.setPassword(passwordEncoder.encode(registration.getPassword()));
+        user.setRoles(Arrays.asList(new Role("ROLE_USER")));
+        return userRepository.save(user);
+    }
 
-	@Override
-	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		User user = userRepository.findByEmail(email);
-		if (user == null) {
-			throw new UsernameNotFoundException("Invalid username or password.");
-		}
-		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),
-				mapRolesToAuthorities(user.getRoles()));
-	}
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(email);
+        if (user == null) {
+            throw new UsernameNotFoundException("Invalid username or password.");
+        }
+        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),
+                mapRolesToAuthorities(user.getRoles()));
+    }
 
-	private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles) {
-		return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
-	}
+    private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles) {
+        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+    }
 
-	public User getCurrentlyLoggedInUser(Authentication authentication) {
+    public User getCurrentlyLoggedInUser(Authentication authentication) {
 
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-		String username = "";
+        String username = "";
 
-		if (principal instanceof UserDetails) {
-			username = ((UserDetails) principal).getUsername();
-		}
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails) principal).getUsername();
+        }
 
-		User user = userRepository.findByEmail(username);
+        User user = userRepository.findByEmail(username);
 
-		log.info("getCurrentlyLoggedInUser() returned: " + user);
+        log.info("getCurrentlyLoggedInUser() returned: " + user);
 
-		return user;
-	}
+        return user;
+    }
 
 }

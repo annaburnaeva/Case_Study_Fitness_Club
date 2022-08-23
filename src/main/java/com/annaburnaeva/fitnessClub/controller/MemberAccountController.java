@@ -25,13 +25,11 @@ public class MemberAccountController {
     private MemberService memberService;
     @Autowired
     private FitnessClassService fitnessClassService;
-    @Autowired
-    private FitnessClassRepository fitnessClassRepository;
-
 
     @GetMapping("/member_account/{id}")
     public String getMember(@PathVariable(name = "id") Long id, Model model) throws MemberNotFoundException {
-        Member member = memberService.getMemberById(id);;
+        Member member = memberService.getMemberById(id);
+        ;
         List<FitnessClass> fitnessClasses = member.getFitnessClasses();
         model.addAttribute("fitnessClasses", fitnessClasses);
         model.addAttribute("member", member);
@@ -57,15 +55,16 @@ public class MemberAccountController {
             return "redirect:/member_account";
         }
     }
-        @PostMapping("/member_account/delete/{memberid}/{fitness_class_id}")
-        public String deleteFitnessClassFromAccount (@PathVariable(name = "memberid") Long memberId,
-                @PathVariable(name = "fitness_class_id") Long fitnessClassId,
-                RedirectAttributes redirectAttributes) throws MemberNotFoundException, FitnessClassNotFoundException {
-            Member member = memberService.getMemberById(memberId);
-            FitnessClass fitnessClass = fitnessClassService.getFitnessClassById(fitnessClassId);
-            List<FitnessClass> membersFitnessClasses = member.getFitnessClasses();
-            membersFitnessClasses.remove(fitnessClass);
-            return "redirect:/member_account";
-        }
 
+    @PostMapping("/member_account/delete/{memberid}/{fitness_class_id}")
+    public String deleteFitnessClassFromAccount(@PathVariable(name = "memberid") Long memberId,
+                                                @PathVariable(name = "fitness_class_id") Long fitnessClassId,
+                                                RedirectAttributes redirectAttributes) throws MemberNotFoundException, FitnessClassNotFoundException {
+        Member member = memberService.getMemberById(memberId);
+        FitnessClass fitnessClass = fitnessClassService.getFitnessClassById(fitnessClassId);
+        List<FitnessClass> membersFitnessClasses = member.getFitnessClasses();
+        membersFitnessClasses.remove(fitnessClass);
+        return "redirect:/member_account";
     }
+
+}

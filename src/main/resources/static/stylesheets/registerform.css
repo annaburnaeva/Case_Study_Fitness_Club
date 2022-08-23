@@ -1,38 +1,41 @@
-h1{
+h1 {
     color: #8ef6e4;
     margin-left: 300px;
     margin-top: -20px;
 }
-h5{
-  font-size: 11px; 
-  color: red;
-  margin-top: -10px;
-  margin-bottom: 20px;
+
+h5 {
+    font-size: 11px;
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 20px;
 }
+
 body {
     font-family: "MV Boli";
-    background-position:top;
+    background-position: top;
     background-image: url(/static/images/positive-young-woman.jpg);
     background-size: 1550px;
     border: none;
     color: #005792;
 }
+
 input[type=text], select, textarea {
-    width: 100%; 
-    padding: 12px; 
-    border: 1px solid #9896f1; 
-    border-radius: 6px; 
-    box-sizing: border-box; 
-    margin-top: 6px; 
-    margin-bottom: 16px; 
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #9896f1;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
     resize: vertical
-  }
-  /* When moving the mouse over the submit button, add a color */
-  input[type=submit]:hover {
+}
+
+input[type=submit]:hover {
     background-color: #f4adad;
-  }
- 
-  .container {
+}
+
+.container {
     margin-top: 15px;
     margin-left: 200px;
     border-radius: 12px;
@@ -40,9 +43,10 @@ input[type=text], select, textarea {
     padding: 30px;
     width: 500px;
     height: 870px;
-  }
-  #submit {
-    background-color:#9896f1;
+}
+
+#submit {
+    background-color: #9896f1;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -50,10 +54,10 @@ input[type=text], select, textarea {
     cursor: pointer;
     width: 100%;
     border-radius: 5px;
-  }
+}
 
-  button {
-    background-color:#9896f1;
+button {
+    background-color: #9896f1;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -61,77 +65,80 @@ input[type=text], select, textarea {
     cursor: pointer;
     width: 100%;
     border-radius: 5px;
-  }
+}
 
-  button:hover {
+button:hover {
     opacity: 0.8;
-  }
+}
 
 label {
-  font-size: 15px; 
+    font-size: 15px;
 }
-ul,p{
-  font-size: 11px; 
-  list-style-type: circle;
+
+ul, p {
+    font-size: 11px;
+    list-style-type: circle;
 }
+
 #pass1, #pass2 {
-  width: 100%; 
-  padding: 12px; 
-  border: 1px solid #9896f1; 
-  border-radius: 6px; 
-  box-sizing: border-box; 
-  margin-top: 6px; 
-  margin-bottom: 16px; 
-  resize: vertical
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #9896f1;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
 }
+
 .dropbtn {
-  background-color: #9896f1;
-  color: #8ef6e4;
-  padding: 10px;
-  font-size: 15px;
-  height: 10px;
-  border: none;
-  cursor: pointer;
+    background-color: #9896f1;
+    color: #8ef6e4;
+    padding: 10px;
+    font-size: 15px;
+    height: 10px;
+    border: none;
+    cursor: pointer;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-  background-color:#9896f1;
+    background-color: #9896f1;
 }
 
 .dropdown {
-  position: relative;
-  display: inline-block;
-  background-color:#9896f1;
-  border: none;
-  border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    background-color: #9896f1;
+    border: none;
+    border-radius: 5px;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  border-radius: 5px;
-  background-color:d5def5;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    background-color: d5def5;
 }
 
 .dropdown-content a {
-  color: #005792;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  /* border-radius: 5px; */
-  background-color:#d5def5;
+    color: #005792;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    /* border-radius: 5px; */
+    background-color: #d5def5;
 }
 
 .dropdown a:hover {
-  border-radius: 5px;
-  background-color:#d5def5;
+    border-radius: 5px;
+    background-color: #d5def5;
 }
 
 .show {
-  display: block;
+    display: block;
 }

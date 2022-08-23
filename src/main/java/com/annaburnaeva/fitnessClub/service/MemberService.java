@@ -19,7 +19,8 @@ public class MemberService {
 
         return memberRepository.findAll();
     }
-    public List<FitnessClass> getAllFitnessClassesByMemberId(Long id){
+
+    public List<FitnessClass> getAllFitnessClassesByMemberId(Long id) {
         Member member = new Member();
         return member.getFitnessClasses();
     }
@@ -46,9 +47,4 @@ public class MemberService {
         throw new MemberNotFoundException("Member with id " + id + "not found");
     }
 
-//
-//    private Member findMemberById(Long memberId) {
-//        return memberRepository.findById(memberId)
-//                .orElseThrow(() -> new RuntimeException("Member with id " + memberId + "not found"));
-//    }
 }

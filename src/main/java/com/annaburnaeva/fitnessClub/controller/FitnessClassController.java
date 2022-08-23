@@ -22,8 +22,6 @@ public class FitnessClassController {
     @Autowired
     private MemberService memberService;
 
-    @Autowired
-    private UserService userService;
     @GetMapping("/fitness_classes")
     public String getAllFitnessClasses(Model model) {
         List<FitnessClass> fitnessClasses = fitnessClassService.getAllFitnessClasses();
@@ -76,8 +74,8 @@ public class FitnessClassController {
             FitnessClass fitnessClass = fitnessClassService.getFitnessClassById(id);
             model.addAttribute("fitnessClass", fitnessClass);
             model.addAttribute("pageTitle", "Adding fitness class (ID: " + id + ")");
-            List<Member>members = memberService.getAllMembers();
-            model.addAttribute("members",members);
+            List<Member> members = memberService.getAllMembers();
+            model.addAttribute("members", members);
             return "fitness_class_members";
         } catch (FitnessClassNotFoundException e) {
             redirectAttributes.addFlashAttribute("message", e.getMessage());

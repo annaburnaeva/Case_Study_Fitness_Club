@@ -20,6 +20,7 @@ public class MainController {
 
     @GetMapping("/login")
     public String login(Model model) {
+
         return "login";
     }
 
@@ -46,6 +47,5 @@ public class MainController {
 
         return "fitness_class_members";
     }
-
 
 }

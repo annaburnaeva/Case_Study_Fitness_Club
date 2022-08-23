@@ -46,10 +46,7 @@ main {
     border: 1px solid lightgray;
     grid-area: main;
     background-color: var(--base-color);
-    /*background-image: url(../images/m);*/
     background-blend-mode: lighten;
-    /*background-size: cover;*/
-    /*display: flex;*/
     justify-content: flex-end;
     align-items: baseline;
     font-size: 40px;

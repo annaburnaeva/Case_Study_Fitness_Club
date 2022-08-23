@@ -23,15 +23,17 @@ public class FitnessClassService {
 
         return fitnessClassRepository.findAll();
     }
+
     @Transactional
     public void saveFitnessClass(FitnessClass fitnessClass) {
 
         fitnessClassRepository.save(fitnessClass);
     }
+
     @Transactional(readOnly = true)
     public FitnessClass getFitnessClassById(Long id) throws FitnessClassNotFoundException {
         Optional<FitnessClass> resultFitnessClass = fitnessClassRepository.findById(id);
-        if (resultFitnessClass.isPresent()){
+        if (resultFitnessClass.isPresent()) {
             return resultFitnessClass.get();
         }
         throw new FitnessClassNotFoundException("Fitness class with id " + id + "not found");
@@ -39,7 +41,7 @@ public class FitnessClassService {
 
     @Transactional
     public void deleteFitnessClassByID(Long id) throws FitnessClassNotFoundException {
-       Long count = fitnessClassRepository.countById(id);
+        Long count = fitnessClassRepository.countById(id);
         if (count == null || count == 0) {
             throw new FitnessClassNotFoundException("Fitness class with id " + id + "not found");
 
@@ -53,26 +55,4 @@ public class FitnessClassService {
         return membersByFitnessClass;
     }
 
-
-
-//    @Transactional
-//    public void updateFitnessClass(Long fitnessClassId, FitnessClass fitnessClassRequest) {
-//        FitnessClass fitnessClass = findFitnessClassById(fitnessClassId);
-//        fitnessClass.setName(fitnessClassRequest.getName());
-//        fitnessClass.setPrice(fitnessClassRequest.getPrice());
-//        fitnessClass.setInstructor(fitnessClassRequest.getInstructor());
-//        fitnessClassRepository.save(fitnessClass);
-//    }
-//
-//    public FitnessClass findFitnessClassById(Long fitnessClassId) {
-//        return fitnessClassRepository.findById(fitnessClassId)
-//                .orElseThrow(() -> new RuntimeException("Fitness Class with id " + fitnessClassId + "not found"));
-//    }
-//
-//    @Transactional
-//    public double getFitnessClassPrice(FitnessClass fitnessClass) {
-//        FitnessClass currentFitnessClass = findFitnessClassById(fitnessClass.getId());
-//        return currentFitnessClass.getPrice();
-//
-//    }
 }

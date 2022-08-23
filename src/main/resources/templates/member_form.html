@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>[[${pageTitle}]]</title>
     <link th:href="@{/stylesheets/fitness-classes.css}" rel="stylesheet"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css"/>
 </head>
 <body>
 <div class="container-fluid text-center">
@@ -57,7 +58,6 @@
 </div>
 <script type="text/javascript">
     function cancelForm() {
-        // window.location="members";
         window.location = "[[@{members}]]";
     }
 </script>
