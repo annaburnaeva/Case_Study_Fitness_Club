@@ -3,7 +3,6 @@ package com.annaburnaeva.fitnessClub.controller;
 import com.annaburnaeva.fitnessClub.entity.*;
 import com.annaburnaeva.fitnessClub.exception.FitnessClassNotFoundException;
 import com.annaburnaeva.fitnessClub.exception.MemberNotFoundException;
-import com.annaburnaeva.fitnessClub.repository.FitnessClassRepository;
 import com.annaburnaeva.fitnessClub.service.FitnessClassService;
 import com.annaburnaeva.fitnessClub.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;

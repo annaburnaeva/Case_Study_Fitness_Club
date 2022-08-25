@@ -20,11 +20,6 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    public List<FitnessClass> getAllFitnessClassesByMemberId(Long id) {
-        Member member = new Member();
-        return member.getFitnessClasses();
-    }
-
     public Member saveMember(Member member) {
 
         return memberRepository.save(member);
@@ -45,6 +40,11 @@ public class MemberService {
             return resultMember.get();
         }
         throw new MemberNotFoundException("Member with id " + id + "not found");
+    }
+
+    public List<FitnessClass> getAllFitnessClassesByMemberId(Long id) {
+        Member member = new Member();
+        return member.getFitnessClasses();
     }
 
 }

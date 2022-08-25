@@ -26,7 +26,6 @@ public class MemberController {
     public String getAllMembers(Model model) {
         List<Member> members = memberService.getAllMembers();
         model.addAttribute("members", members);
-//        List<FitnessClass> fitnessClasses = fitnessClassService.getAllFitnessClasses();
         return "members";
     }
 
@@ -81,15 +80,16 @@ public class MemberController {
             currentFitnessClasses.add(fitnessClass);
             List<Member> currentMembers = fitnessClass.getMembers();
             currentMembers.add(member);
+//            model.addAttribute("member", new Member());
             model.addAttribute("member", member);
             model.addAttribute("fitnessClass", fitnessClass);
             memberService.saveMember(member);
             fitnessClassService.saveFitnessClass(fitnessClass);
+            redirectAttributes.addFlashAttribute("message", "The member with id " + memberId + " was successfully sign up ");
             return "redirect:/fitness_classes";
         } catch (MemberNotFoundException | FitnessClassNotFoundException e) {
             redirectAttributes.addFlashAttribute("message", "Member or Class not found");
             return "redirect:/members";
-
         }
 
     }
